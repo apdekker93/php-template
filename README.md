@@ -30,7 +30,7 @@ Dit hoeft maar 1 leerling per groepje te doen.
 
 ### 2. Code uitvoeren
 Start de PHP-webserver:
-- Type in de terminal `php -S localhost:8080` en druk dan op de toets [Enter↵]
+- Type in de terminal `start-server` en druk dan op de toets [Enter↵]
 
   Een browser vraagt het `index.php` bestand op bij de webserver, maakt de inhoud op en laat de opgemaakte inhoud zien.
 
@@ -60,3 +60,15 @@ Wijzigingen van je groepsgenoot die jij hebt overschreven kun je terughalen:
 - Klik bij het bestand waarvan je wijzigingen wilt herstellen op het icoontje links van de M, het bestand opent (als je rode en groene regels ziet dan heb je op de naam van het bestand geklikt in plaats van het icoontje)
 - Knip en plak de wijzigingen uit de versie van je groepsgenoot naar de versie van jou
 - Sla je wijzigingen op in GitHub met "Commit & Sync"
+
+## Geavanceerd
+
+Er zijn een paar dingen die misschien goed zijn om te weten, maar niet nodig om gelijk aan de slag de gaan. Die leggen we hier even uit.
+
+### Verborgen bestanden
+
+Op GitHub zag je veel meer bestanden staan dan wat je in VSCode in de CodeSpace ziet staan. Dat hebben we in de instellingen zo geregeld. Dat houdt het overzichtelijk om aan het project te werken.
+
+### Updates van de template
+
+Je docent kan de template updaten. Als je de nieuwste versie wilt gebruiken, voer je het volgende commando uit in de terminal: `update-template`. Daarna rebuild je de CodeSpace (instructies hiervoor krijg je in de terminal als het script uitgevoerd is).

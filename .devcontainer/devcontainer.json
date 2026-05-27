@@ -3,7 +3,14 @@
 	"name": "html",
 	// Image to use for the dev container. More info: https://containers.dev/templates
 	"image": "mcr.microsoft.com/devcontainers/universal:latest",
-	
+
+	// Installeer MySQL automatisch bij aanmaken van de Codespace
+	"features": {
+		"ghcr.io/devcontainers/features/mysql:1": {
+			"rootPassword": "root"
+		}
+	},
+
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
 		8080

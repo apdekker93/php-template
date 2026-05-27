@@ -4,4 +4,4 @@
 sudo service mysql start
 
 # Start de PHP webserver
-server-start
+start-server

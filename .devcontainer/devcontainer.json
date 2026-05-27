@@ -3,7 +3,7 @@
 	"name": "html",
 	// Image to use for the dev container. More info: https://containers.dev/templates
 	"image": "mcr.microsoft.com/devcontainers/universal:latest",
-
+	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
 		8080

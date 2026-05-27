@@ -35,7 +35,7 @@ Start de PHP-webserver:
   Een browser vraagt het `index.php` bestand op bij de webserver, maakt de inhoud op en laat de opgemaakte inhoud zien.
 
 Als de browser niet automatisch opent:
-- Klik op ports, klik bij port 8080 (webserver) op "Open in Browser" (wereldbol) of "Preview in Editor" (rechts van wereldbol)<br>
+- Klik op ports, klik bij port 8080 (webserver) op "Open in Browser" (wereldbol) of "Preview in Editor" (rechts van wereldbol)
 
 ## Code aanpassen
 - Dubbelklik op een bestand dat eindigt op `.php`. Het bestand wordt geopend in de editor.

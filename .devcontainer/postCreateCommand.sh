@@ -14,7 +14,6 @@ error_reporting = E_ALL" | sudo tee "$PHP_INI_DIR/99-debug.ini" > /dev/null
 # MySQL server + PHP mysqli-extensie installeren
 sudo apt-get update -qq
 sudo apt-get install -y -qq mysql-server php-mysql
-sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'; FLUSH PRIVILEGES;"
 
 # start-server en update-template beschikbaar maken als commando
 chmod +x start-server.sh

@@ -5,6 +5,7 @@
 #
 #   bash update-template.sh
 
+REMOTE_NAAM="docent-template"
 UPSTREAM="https://github.com/apdekker93/php-template.git"
 BESTANDEN=(
     ".devcontainer/devcontainer.json"
@@ -15,22 +16,22 @@ BESTANDEN=(
 
 echo "▶ Template-update starten..."
 
-# Voeg upstream toe als die er nog niet is
-if ! git remote get-url upstream &> /dev/null; then
-    git remote add upstream "$UPSTREAM"
-    echo "✓ Upstream toegevoegd."
+# Voeg docent-remote toe als die er nog niet is
+if ! git remote get-url "$REMOTE_NAAM" &> /dev/null; then
+    git remote add "$REMOTE_NAAM" "$UPSTREAM"
+    echo "✓ Remote '$REMOTE_NAAM' toegevoegd."
 else
-    echo "✓ Upstream bestaat al."
+    echo "✓ Remote '$REMOTE_NAAM' bestaat al."
 fi
 
 # Haal de nieuwste versie op
 echo "▶ Ophalen van updates..."
-git fetch upstream || { echo "✗ Ophalen mislukt. Controleer je internetverbinding."; exit 1; }
+git fetch "$REMOTE_NAAM" || { echo "✗ Ophalen mislukt. Controleer je internetverbinding."; exit 1; }
 
 # Overschrijf de template-bestanden
 echo "▶ Bestanden bijwerken..."
 for BESTAND in "${BESTANDEN[@]}"; do
-    git checkout upstream/main -- "$BESTAND" && echo "  ✓ $BESTAND" || echo "  ✗ $BESTAND (mislukt)"
+    git checkout "$REMOTE_NAAM/main" -- "$BESTAND" && echo "  ✓ $BESTAND" || echo "  ✗ $BESTAND (mislukt)"
 done
 
 # Sla op in GitHub

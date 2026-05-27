@@ -1,38 +1,44 @@
 <?php
-$pdo = new PDO("sqlite:shop.db");
-$products = $pdo->query("SELECT * FROM products");
-$rows = $products->fetchAll(PDO::FETCH_ASSOC);
-?>
+// Verbinding maken met MySQL.
+// Kopieer deze regel naar je eigen bestanden en pas de databasenaam aan.
+$conn = mysqli_connect("localhost", "root", "root", "");
 
+if (!$conn) {
+    die("<p>Verbinding mislukt: " . mysqli_connect_error() . "</p>");
+}
+?>
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 <head>
-    <title>My Shop</title>
+    <meta charset="utf-8">
+    <title>PHP & SQL CodeSpace</title>
 </head>
 <body>
-    <h1>Products</h1>
+    <h1>Verbinding gelukt!</h1>
 
-    <?php if (!empty($rows)): ?>
-        <table border="1" cellpadding="6" cellspacing="0">
-            <tr>
-                <?php foreach (array_keys($rows[0]) as $column): ?>
-                    <th><?= htmlspecialchars($column) ?></th>
-                <?php endforeach; ?>
-            </tr>
+    <h2>Jouw verbindingsgegevens</h2>
+    <table border="1" cellpadding="6" cellspacing="0">
+        <tr><th>Instelling</th><th>Waarde</th></tr>
+        <tr><td>Host</td><td><code>localhost</code></td></tr>
+        <tr><td>Gebruiker</td><td><code>root</code></td></tr>
+        <tr><td>Wachtwoord</td><td><code>root</code></td></tr>
+        <tr><td>Database</td><td>maak zelf aan via Adminer</td></tr>
+    </table>
 
-            <?php foreach ($rows as $row): ?>
-                <tr>
-                    <?php foreach ($row as $value): ?>
-                        <td><?= htmlspecialchars($value) ?></td>
-                    <?php endforeach; ?>
-                </tr>
-            <?php endforeach; ?>
-        </table>
-    <?php else: ?>
-        <p>No products found.</p>
-    <?php endif; ?>
+    <h2>Zo gebruik je dit in je code</h2>
+    <pre><code>&lt;?php
+$conn = mysqli_connect("localhost", "root", "root", "jouw_database");
 
-    <hr>
-    <a href="/adminer.php?sqlite=&username=user&db=shop.db" target="_blank">Database Admin Page</a> (Open link in new tab, dus niet in de Simple Browser van VSCode, en gebruik wachtwoord secret123)
+if (!$conn) {
+    die("Verbinding mislukt: " . mysqli_connect_error());
+}
+?&gt;</code></pre>
+
+    <h2>Database beheren</h2>
+    <p>
+        Maak via Adminer een database aan en beheer je tabellen en gegevens.<br>
+        Log in met gebruiker <code>root</code> en wachtwoord <code>root</code>.
+    </p>
+    <a href="/adminer.php?server=localhost&username=root">Open Adminer →</a>
 </body>
 </html>

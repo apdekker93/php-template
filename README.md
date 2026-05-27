@@ -2,38 +2,37 @@
 
 Deze repository bevat een configuratie voor de Codespaces ontwikkelomgeving.
 
-Leerlingen kunnen hiermee de PHP projecten uit Informatica-Actief maken.
-
-De configuratie ondersteunt:
+Hiermee kan je de PO WebApp maken. Je kan in de ontwikkelomgeving gebruikmaken van:
 - PHP
-- Webserver (ingebouwd in PHP, start met `php -S localhost:8080`)
+- Webserver (ingebouwd in PHP)
 - Database (SQLite)
-- Webbased database beheer (Adminer)
+- Database-beheer (Adminer, geschreven in PHP)
 
-## Kopieer projectcode
-- De projectcode van je docent staat op een plek waar jij het niet kunt wijzigen.
-- Voordat je aan de slag gaat kopieer je de projectcode naar een plek waar je die kunt wijzigen.
-- Je docent vertelt hoe je dit kunt doen.
+## Starten
 
-Opties voor de docent:
-- Optie 1: voor incidenteel gebruik (zonder GitHub Classroom)
-  - Een leerling drukt op "Use this template"->"Create a new repository" en slaat de projectcode (repository) op onder zijn eigen account.
-  - Deze leerling voegt onder Settings van de repository de andere leerling en de docent toe als collaborator.
-- Optie 2: voor structureel gebruik (met GitHub Classroom)
-  - De docent gebruikt GitHub Classroom om een opdracht aan te maken en deelt een inschrijf-link met leerlingen.
-  - Leerlingen gebruiken de inschrijf-link naar GitHub Classroom om een repository voor hun groepje aan te maken. Deze repositories worden geplaatst in een door de docent beheerde GitHub-organisatie.
+Volg deze stappen om aan de slag te gaan.
 
-## Start Codespaces
+### 0. Je eigen kopie maken
+
+Dit hoeft maar 1 leerling per groepje te doen.
+
+1. Druk rechtsboven op "Use this template" -> "Create a new repository"
+2. Kies een naam die duidelijk maakt wat je project is en sla op.
+3. Ga naar settings -> collaborators
+4. Voeg apdekker93 toe.
+5. Voeg andere leerlingen toe waarmee je samenwerkt.
+
+### 1. Start Codespaces
 - Login op https://github.com/
 - Ga naar de pagina met jouw projectcode
 - Klik op de groene knop "Code" en dan op de tab "Codespace" en dan op de groen knop "Create codespace on main". Als je de knop "Create Codespace on main" niet ziet, dan heb je eerder een Codespace gemaakt. Deze zie je op de plek van de knop staan en daar kun je op klikken om hem opnieuw te starten.
-- Het starten van de Codespace kan enkele minuten duren. Als de Codespace gestart is, dan zie je de webversie van de editor VS Code (spreek uit als: vie-es-koot).
+- Het starten van de Codespace kan enkele minuten duren. Als de Codespace gestart is, dan zie je de webversie van de editor VS Code (spreek uit als: vie-es-kood).
 
-## Code uitvoeren
+### 2. Code uitvoeren
 Start de PHP-webserver:
 - Type in de terminal `php -S localhost:8080` en druk dan op de toets [Enter↵]
 
-Een browser vraagt het `index.php` bestand op bij de webserver, maakt de inhoud op en laat de opgemaakte inhoud zien.
+  Een browser vraagt het `index.php` bestand op bij de webserver, maakt de inhoud op en laat de opgemaakte inhoud zien.
 
 Als de browser niet automatisch opent:
 - Klik op ports, klik bij port 8080 (webserver) op "Open in Browser" (wereldbol) of "Preview in Editor" (rechts van wereldbol)<br>
@@ -50,14 +49,14 @@ Sla je wijzigingen als volgt op in GitHub:
 ## Samenwerken in GitHub
 Sla je wijzigingen op in GitHub, zoals hierboven beschreven.
 
-Als je maatje intussen andere wijzigingen heeft opgeslagen, dan kiest GitHub als volgt:
-- Bestanden die jouw maatje heeft gewijzigd worden van GitHub naar jouw Codespace gekopieerd.
+Als je groepsgenoot intussen andere wijzigingen heeft opgeslagen, dan kiest GitHub als volgt:
+- Bestanden die de ander heeft gewijzigd worden van GitHub naar jouw Codespace gekopieerd.
 - Bestanden die jij hebt gewijzigd worden van jouw Codespace naar GitHub gekopieerd. 
 - Van bestanden die jullie allebei hebben gewijzigd toont GitHub jouw versie als laatste versie.
 
-Wijzigingen van je maatje die jij hebt overschreven kun je terughalen:
+Wijzigingen van je groepsgenoot die jij hebt overschreven kun je terughalen:
 - Klik op het Source Control icoon.
-- Klik onder GRAPH op de wijziging van je maatje, de lijst met bestanden die je maatje veranderd heeft verschijnen
+- Klik onder GRAPH op de wijziging van je groepsgenoot, de lijst met bestanden die je groepsgenoot veranderd heeft verschijnen
 - Klik bij het bestand waarvan je wijzigingen wilt herstellen op het icoontje links van de M, het bestand opent (als je rode en groene regels ziet dan heb je op de naam van het bestand geklikt in plaats van het icoontje)
-- Knip en plak de wijzigingen uit de versie van je maatje naar de versie van jou
+- Knip en plak de wijzigingen uit de versie van je groepsgenoot naar de versie van jou
 - Sla je wijzigingen op in GitHub met "Commit & Sync"

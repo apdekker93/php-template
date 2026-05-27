@@ -12,6 +12,7 @@ BESTANDEN=(
     ".devcontainer/postStartCommand.sh"
     "voorbeeld/index.php"
     "router.php"
+    "start-server.sh"
 )
 
 echo "▶ Template-update starten..."
@@ -27,6 +28,20 @@ fi
 # Haal de nieuwste versie op
 echo "▶ Ophalen van updates..."
 git fetch "$REMOTE_NAAM" || { echo "✗ Ophalen mislukt. Controleer je internetverbinding."; exit 1; }
+
+# Controleer of dit script zelf bijgewerkt moet worden
+LOCAL_HASH=$(git rev-parse HEAD:update-template.sh 2>/dev/null)
+REMOTE_HASH=$(git rev-parse "$REMOTE_NAAM/main:update-template.sh" 2>/dev/null)
+
+if [ "$LOCAL_HASH" != "$REMOTE_HASH" ]; then
+    echo "▶ Nieuwere versie van dit script beschikbaar. Bijwerken..."
+    git checkout "$REMOTE_NAAM/main" -- update-template.sh
+    git commit -m "update-template.sh bijgewerkt" && git push
+    echo ""
+    echo "✓ Script bijgewerkt. Voer het opnieuw uit:"
+    echo "    bash update-template.sh"
+    exit 0
+fi
 
 # Overschrijf de template-bestanden
 echo "▶ Bestanden bijwerken..."

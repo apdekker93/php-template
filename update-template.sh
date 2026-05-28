@@ -11,7 +11,7 @@ BESTANDEN=(
     ".devcontainer/devcontainer.json"
     ".devcontainer/postCreateCommand.sh"
     ".devcontainer/postStartCommand.sh"
-    "voorbeeld/index.php"
+    "uitleg"
     "router.php"
     "start-server.sh"
 )

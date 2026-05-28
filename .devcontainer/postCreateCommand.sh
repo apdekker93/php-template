@@ -11,12 +11,12 @@ echo "display_errors = On
 display_startup_errors = On
 error_reporting = E_ALL" | sudo tee "$PHP_INI_DIR/99-debug.ini" > /dev/null
 
-# PHP mysqli-extensie installeren
+# MySQL-commando en PHP mysqli-extensie installeren
 sudo apt-get update -qq
-sudo apt-get install -y -qq php-mysql
+sudo apt-get install -y -qq default-mysql-client php-mysql
 
 # start-server en update-template beschikbaar maken als commando
-chmod +x start-server.sh
-sudo ln -sf "$(pwd)/start-server.sh" /usr/local/bin/start-server
-chmod +x update-template.sh
-sudo ln -sf "$(pwd)/update-template.sh" /usr/local/bin/update-template
+printf '#!/bin/bash\nbash "%s/start-server.sh"\n' "$(pwd)" \
+    | sudo install -m 755 /dev/stdin /usr/local/bin/start-server
+printf '#!/bin/bash\nbash "%s/update-template.sh"\n' "$(pwd)" \
+    | sudo install -m 755 /dev/stdin /usr/local/bin/update-template

@@ -17,8 +17,11 @@ sudo apt-get update -qq
 # MySQL server en MySQL client installeren
 sudo apt-get install -y -qq default-mysql-server default-mysql-client
 
-# PHP mysqli-extensie installeren op Docker-manier
-docker-php-ext-install mysqli pdo_mysql
+# PHP mysqli-extensie compileren en inschakelen
+sudo docker-php-ext-install mysqli pdo_mysql
+PHP_INI_DIR=$(php --ini | grep "Scan for" | awk -F': ' '{print $2}' | tr -d '"')
+echo "extension=mysqli.so" | sudo tee "$PHP_INI_DIR/docker-php-ext-mysqli.ini" > /dev/null
+echo "extension=pdo_mysql.so" | sudo tee "$PHP_INI_DIR/docker-php-ext-pdo_mysql.ini" > /dev/null
 
 # start-server beschikbaar maken als commando
 printf '#!/bin/bash\nbash "%s/start-server.sh"\n' "$(pwd)" \

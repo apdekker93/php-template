@@ -37,7 +37,7 @@ if (!$conn) {
     <h2>Database beheren</h2>
     <p>
         Maak via Adminer een database aan en beheer je tabellen en gegevens.<br>
-        Log in met gebruiker <code>root</code> en wachtwoord <code>root</code>.
+        Log in met server <code>127.0.0.1</code>, gebruiker <code>root</code> en wachtwoord <code>root</code>.
     </p>
     <a href="/adminer.php?server=127.0.0.1&username=root">Open Adminer →</a>
 </body>

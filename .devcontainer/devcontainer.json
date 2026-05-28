@@ -1,6 +1,11 @@
 {
     "name": "PHP & SQL CodeSpace",
     "image": "mcr.microsoft.com/devcontainers/php:latest",
+    "features": {
+        "ghcr.io/devcontainers/features/mysql:1": {
+            "rootPassword": "root"
+        }
+    },
     "forwardPorts": [8080],
     "portsAttributes": {
         "8080": {
@@ -17,8 +22,5 @@
                 "ms-vsliveshare.vsliveshare"
             ]
         }
-    },
-	"features": {
-		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
-	}
+    }
 }

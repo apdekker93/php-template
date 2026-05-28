@@ -18,10 +18,9 @@ sudo apt-get update -qq
 sudo apt-get install -y -qq default-mysql-server default-mysql-client
 
 # PHP mysqli-extensie compileren en inschakelen
-sudo docker-php-ext-install mysqli pdo_mysql
+sudo docker-php-ext-install mysqli
 PHP_INI_DIR=$(php --ini | grep "Scan for" | awk -F': ' '{print $2}' | tr -d '"')
 echo "extension=mysqli.so" | sudo tee "$PHP_INI_DIR/docker-php-ext-mysqli.ini" > /dev/null
-echo "extension=pdo_mysql.so" | sudo tee "$PHP_INI_DIR/docker-php-ext-pdo_mysql.ini" > /dev/null
 echo "mysqli.default_socket=/run/mysqld/mysqld.sock" | sudo tee "$PHP_INI_DIR/mysql-socket.ini" > /dev/null
 
 # start-server beschikbaar maken als commando

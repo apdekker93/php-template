@@ -14,11 +14,8 @@ error_reporting = E_ALL" | sudo tee "$PHP_INI_DIR/99-debug.ini" > /dev/null
 # Pakketlijsten bijwerken
 sudo apt-get update -qq
 
-# MySQL server installeren
-sudo apt-get install -y -qq default-mysql-server
-
-# PHP mysqli-extensie en MySQL client installeren
-sudo apt-get install -y -qq php-mysql default-mysql-client
+# MySQL server, PHP mysqli-extensie en MySQL client installeren
+sudo apt-get install -y -qq default-mysql-server php-mysql default-mysql-client
 
 # start-server beschikbaar maken als commando
 printf '#!/bin/bash\nbash "%s/start-server.sh"\n' "$(pwd)" \

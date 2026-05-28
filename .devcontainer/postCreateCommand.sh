@@ -11,6 +11,9 @@ echo "display_errors = On
 display_startup_errors = On
 error_reporting = E_ALL" | sudo tee "$PHP_INI_DIR/99-debug.ini" > /dev/null
 
+# MySQL server installeren
+sudo apt-get install -y -qq default-mysql-server
+
 # PHP mysqli-extensie en MySQL client installeren
 PHP_VERSION=$(php -r "echo PHP_MAJOR_VERSION.'.'.PHP_MINOR_VERSION;")
 sudo apt-get install -y -qq php${PHP_VERSION}-mysql default-mysql-client

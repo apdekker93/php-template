@@ -1,6 +1,6 @@
 {
     "name": "PHP & SQL CodeSpace",
-    "image": "mcr.microsoft.com/devcontainers/universal:latest",
+    "image": "mcr.microsoft.com/devcontainers/php:latest",
     "forwardPorts": [8080],
     "portsAttributes": {
         "8080": {

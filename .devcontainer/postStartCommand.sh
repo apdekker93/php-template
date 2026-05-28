@@ -4,7 +4,7 @@
 sudo service mariadb start
 
 # Wacht tot MariaDB klaar is
-until mysql -u root -e "SELECT 1" &>/dev/null; do
+until sudo mysql -u root -e "SELECT 1" &>/dev/null; do
     sleep 1
 done
 
@@ -13,5 +13,5 @@ sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED VIA unix_socket OR mysql
 
 # Importeer database.sql zodat tabellen altijd beschikbaar zijn
 if [ -f "database.sql" ]; then
-    mysql -u root -proot < database.sql 2>/dev/null || true
+    sudo mysql -u root -proot < database.sql 2>/dev/null || true
 fi

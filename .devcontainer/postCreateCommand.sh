@@ -16,6 +16,7 @@ sudo apt-get update -qq
 sudo apt-get install -y -qq default-mysql-client
 
 # PHP mysqli-extensie installeren
+sudo add-apt-repository -y ppa:ondrej/php
 PHP_VERSION=$(php -r "echo PHP_MAJOR_VERSION.'.'.PHP_MINOR_VERSION;")
 sudo apt-get install -y -qq php${PHP_VERSION}-mysql
 

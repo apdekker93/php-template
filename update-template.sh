@@ -12,6 +12,9 @@ BESTANDEN=(
     ".devcontainer/postCreateCommand.sh"
     ".devcontainer/postStartCommand.sh"
     "uitleg"
+    "oefenen/onderwerp-4"
+    "oefenen/onderwerp-5"
+    "oefenen/onderwerp-6"
     "router.php"
     "start-server.sh"
 )

@@ -33,6 +33,6 @@ if (isset($_GET["naam"])) {
 		<input type="text" name="naam">
 		<input type="submit" value="Opsturen">
 	</form>
-	<p><?=$message?>Ga naar <a href="session_score_opvragen.php">deze pagina</a> om de score te bekijken van de laatst opgestuurde naam.</p>
+	<p><?=$message?>Ga naar <a href="uitwerking_session_score_opvragen.php">deze pagina</a> om de score te bekijken van de laatst opgestuurde naam.</p>
 </body>
 </html>

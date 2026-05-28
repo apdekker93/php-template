@@ -12,6 +12,7 @@ BESTANDEN=(
     ".devcontainer/postCreateCommand.sh"
     ".devcontainer/postStartCommand.sh"
     "uitleg"
+    ".vscode"
     "oefenen/onderwerp-4"
     "oefenen/onderwerp-5"
     "oefenen/onderwerp-6"

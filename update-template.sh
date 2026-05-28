@@ -9,6 +9,7 @@ REMOTE_NAAM="docent-template"
 UPSTREAM="https://github.com/apdekker93/php-template.git"
 BESTANDEN=(
     ".devcontainer/devcontainer.json"
+    ".devcontainer/postCreateCommand.sh"
     ".devcontainer/postStartCommand.sh"
     "voorbeeld/index.php"
     "router.php"

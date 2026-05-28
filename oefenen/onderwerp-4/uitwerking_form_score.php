@@ -1,7 +1,7 @@
 <?php
 
 // verbinden met de database
-$con = include("dbconn.php");
+include("dbconn.php");
 
 if (isset($_GET["naam"]) && isset($_GET["score"])) {
 	// Lees de opgestuurde gegevens uit

@@ -1,6 +1,6 @@
 <?php
 
-$con = include("dbconn.php");
+include("dbconn.php");
 
 // Vraag de score van een gebruiker op als er een naam is opgestuurd
 if (isset($_GET["naam"])) {

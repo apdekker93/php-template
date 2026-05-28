@@ -1,7 +1,7 @@
 <?php
 
 // Verbind met de database
-$con = include("dbconn.php");
+include("dbconn.php");
 
 // Start de sessie
 session_start();

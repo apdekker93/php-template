@@ -10,7 +10,7 @@ if (isset($_GET["naam"]) && isset($_GET["score"])) {
 	
 	// Maak de query
 	$query = "
-		INSERT INTO score (username, score)
+		INSERT INTO scores (username, score)
 		VALUES ('$opgestuurde_naam', $opgestuurde_score)
 	";
 	

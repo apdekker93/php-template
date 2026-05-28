@@ -10,7 +10,7 @@ if (isset($_GET["naam"])) {
 	// Maak de query
 	$query = "
 		SELECT username, score
-		FROM score
+		FROM scores
 		WHERE username = '$opgestuurde_naam'
 	";
 	
@@ -38,13 +38,11 @@ if (isset($_GET["naam"])) {
 <title>Scoreformulier</title>
 </head>
 <body>
-	<p>Voer hier je score in.</p>
+	<p>Vraag hier een score op.</p>
 	<form>
 		<label>Naam: </label>
 		<input type="text" name="naam">
-		<label>Score: </label>
-		<input type="text" name="score">
-		<input type="submit" value="Opsturen">
+		<input type="submit" value="Opvragen">
 	</form>
 	<p><?=$message?></p>
 	<p>De uitgevoerde query is:</p>

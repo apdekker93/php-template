@@ -14,7 +14,7 @@ if (isset($_SESSION["naam"])) {
 	// Maak de query.
 	$query = "
 		SELECT username, score
-		FROM score
+		FROM scores
 		WHERE username = '$opgeslagen_naam'
 	";
 	
@@ -44,8 +44,8 @@ if (isset($_SESSION["naam"])) {
 <body>
 	<p>
 	<?=$message?>
-	Op <a href="session_start_score.php">deze pagina</a> kan je een naam invoeren.
-	Je kan op <a href="session_verwijderen.php">deze pagina</a> de sessie verwijderen.
+	Op <a href="uitwerking_session_start_score.php">deze pagina</a> kan je een naam invoeren.
+	Je kan op <a href="uitwerking_session_verwijderen.php">deze pagina</a> de sessie verwijderen.
 	</p>
 	<p>De uitgevoerde query is:</p>
 	<pre><?=$query?></pre>

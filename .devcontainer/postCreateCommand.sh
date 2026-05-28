@@ -15,8 +15,12 @@ error_reporting = E_ALL" | sudo tee "$PHP_INI_DIR/99-debug.ini" > /dev/null
 sudo apt-get update -qq
 sudo apt-get install -y -qq mysql-server php-mysql
 
-# voeg user toe aan mysql usergroep, zodat sockets gebruikt kunnen worden om wachtwoordloos in te loggen.
-sudo usermod -aG mysql $USER
+echo "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'; FLUSH PRIVILEGES;" \
+    | sudo tee /etc/mysql/conf.d/root-password.sql > /dev/null
+
+echo "[mysqld]
+init_file = /etc/mysql/conf.d/root-password.sql" \
+    | sudo tee /etc/mysql/conf.d/99-init.cnf > /dev/null
 
 # start-server en update-template beschikbaar maken als commando
 chmod +x start-server.sh

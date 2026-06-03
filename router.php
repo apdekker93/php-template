@@ -1,25 +1,61 @@
 <?php
 // Router script voor de PHP ingebouwde webserver.
 // Gebruik: php -S localhost:8080 router.php
-//
-// Zonder dit script stuurt de server alle ontbrekende bestanden
-// door naar index.php. Met dit script krijgen leerlingen een
-// duidelijke foutmelding als een bestand niet bestaat.
 
 $requestPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $filePath = __DIR__ . $requestPath;
 
-// Bestand bestaat → PHP serveert het gewoon zelf
+// Bestand bestaat
 if (is_file($filePath)) {
-    return false;
+    $ext = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
+
+    // PHP-bestanden worden normaal uitgevoerd
+    if ($ext === 'php') {
+        return false;
+    }
+
+    // Statische bestanden: stuur met juist MIME-type
+    $mimeTypes = [
+        'png'   => 'image/png',
+        'jpg'   => 'image/jpeg',
+        'jpeg'  => 'image/jpeg',
+        'gif'   => 'image/gif',
+        'svg'   => 'image/svg+xml',
+        'webp'  => 'image/webp',
+        'ico'   => 'image/x-icon',
+        'css'   => 'text/css; charset=utf-8',
+        'js'    => 'application/javascript; charset=utf-8',
+        'html'  => 'text/html; charset=utf-8',
+        'htm'   => 'text/html; charset=utf-8',
+        'txt'   => 'text/plain; charset=utf-8',
+        'json'  => 'application/json; charset=utf-8',
+        'xml'   => 'application/xml',
+        'pdf'   => 'application/pdf',
+        'woff'  => 'font/woff',
+        'woff2' => 'font/woff2',
+        'ttf'   => 'font/ttf',
+        'mp4'   => 'video/mp4',
+        'webm'  => 'video/webm',
+        'mp3'   => 'audio/mpeg',
+    ];
+
+    header('Content-Type: ' . ($mimeTypes[$ext] ?? 'application/octet-stream'));
+    header('Content-Length: ' . filesize($filePath));
+    readfile($filePath);
+    exit;
 }
 
-// Map aangevraagd → zoek index.php daarin (normaal gedrag)
+// Map aangevraagd → zoek index.php of index.html daarin
 if (is_dir($filePath)) {
-    $index = rtrim($filePath, '/') . '/index.php';
-    if (is_file($index)) {
-        require $index;
+    $base = rtrim($filePath, '/');
+    if (is_file($base . '/index.php')) {
+        require $base . '/index.php';
         return true;
+    }
+    if (is_file($base . '/index.html')) {
+        header('Content-Type: text/html; charset=utf-8');
+        readfile($base . '/index.html');
+        exit;
     }
 }
 

@@ -53,6 +53,9 @@ for BESTAND in "${BESTANDEN[@]}"; do
     git checkout "$REMOTE_NAAM/main" -- "$BESTAND" && echo "  ✓ $BESTAND" || echo "  ✗ $BESTAND (mislukt)"
 done
 
+# Verwijder het bestand dat git-LFS fouten veroorzaakt
+rm .git/hooks/pre-pull 2> /dev/null
+
 # Sla op in GitHub
 echo "▶ Opslaan in GitHub..."
 git commit -m "Template-bestanden bijgewerkt" || { echo "  (Geen wijzigingen om op te slaan.)"; exit 0; }

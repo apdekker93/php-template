@@ -34,11 +34,12 @@
         "**/.*": true,
         "adminer-plugins.php": true,
         "adminer-plugins/": true,
-        "adminer.php": true
+        "adminer.php": true,
+        "router.php": true
     },
 
     // Open MarkDown files in preview.
-        "workbench.editorAssociations": {
+    "workbench.editorAssociations": {
         "*.md": "vscode.markdown.preview.editor"
     },
     "markdown.preview.openMarkdownLinks": "inPreview",

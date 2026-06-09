@@ -12,7 +12,6 @@ BESTANDEN=(
     ".devcontainer/postCreateCommand.sh"
     ".devcontainer/postStartCommand.sh"
     "uitleg"
-    ".vscode"
     "oefenen/onderwerp-4"
     "oefenen/onderwerp-5"
     "oefenen/onderwerp-6"
@@ -53,6 +52,9 @@ echo "▶ Bestanden bijwerken..."
 for BESTAND in "${BESTANDEN[@]}"; do
     git checkout "$REMOTE_NAAM/main" -- "$BESTAND" && echo "  ✓ $BESTAND" || echo "  ✗ $BESTAND (mislukt)"
 done
+
+# Verwijder het bestand dat git-LFS fouten veroorzaakt
+rm .git/hooks/pre-push 2> /dev/null
 
 # Sla op in GitHub
 echo "▶ Opslaan in GitHub..."

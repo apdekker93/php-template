@@ -2,7 +2,7 @@
 // Router script voor de PHP ingebouwde webserver.
 // Gebruik: php -S localhost:8080 router.php
 
-$requestPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$requestPath = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 $filePath = __DIR__ . $requestPath;
 
 // Bestand bestaat

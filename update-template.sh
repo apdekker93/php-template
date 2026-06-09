@@ -54,7 +54,7 @@ for BESTAND in "${BESTANDEN[@]}"; do
 done
 
 # Verwijder het bestand dat git-LFS fouten veroorzaakt
-rm .git/hooks/pre-pull 2> /dev/null
+rm .git/hooks/pre-push 2> /dev/null
 
 # Sla op in GitHub
 echo "▶ Opslaan in GitHub..."

@@ -1,9 +1,10 @@
 #!/bin/bash
 
 # Haal de nieuwste template-bestanden op van de docent.
-# Voer dit script eenmalig uit in de terminal van je Codespace:
+# Gebruik:
 #
-#   bash update-template.sh
+#   update-template              → update vaste bestanden + zichzelf
+#   update-template oefeningen   → reset de hele map 'oefeningen' (rest ongewijzigd)
 
 REMOTE_NAAM="docent-template"
 UPSTREAM="https://github.com/apdekker93/php-template.git"
@@ -12,9 +13,6 @@ BESTANDEN=(
     ".devcontainer/postCreateCommand.sh"
     ".devcontainer/postStartCommand.sh"
     "uitleg"
-    "oefenen/onderwerp-4"
-    "oefenen/onderwerp-5"
-    "oefenen/onderwerp-6"
     "router.php"
     "start-server.sh"
 )
@@ -33,6 +31,27 @@ fi
 echo "▶ Ophalen van updates..."
 git fetch "$REMOTE_NAAM" || { echo "✗ Ophalen mislukt. Controleer je internetverbinding."; exit 1; }
 
+# ── Modus: map resetten ──────────────────────────────────────────────────────
+if [ -n "$1" ]; then
+    MAP="$1"
+    echo "▶ Map '$MAP' resetten vanuit template..."
+    git checkout "$REMOTE_NAAM/main" -- "$MAP" \
+        && echo "  ✓ $MAP" \
+        || { echo "  ✗ $MAP (mislukt — bestaat de map in de template?)"; exit 1; }
+
+    rm -f .git/hooks/pre-push 2>/dev/null
+
+    echo "▶ Opslaan in GitHub..."
+    git commit -m "'$MAP' gereset vanuit template" || { echo "  (Geen wijzigingen om op te slaan.)"; exit 0; }
+    git push || { echo "✗ Pushen mislukt."; exit 1; }
+
+    echo ""
+    echo "✓ Klaar! '$MAP' is overschreven met de template-versie."
+    exit 0
+fi
+
+# ── Modus: standaard update ──────────────────────────────────────────────────
+
 # Controleer of dit script zelf bijgewerkt moet worden
 LOCAL_HASH=$(git rev-parse HEAD:update-template.sh 2>/dev/null)
 REMOTE_HASH=$(git rev-parse "$REMOTE_NAAM/main:update-template.sh" 2>/dev/null)
@@ -43,7 +62,7 @@ if [ "$LOCAL_HASH" != "$REMOTE_HASH" ]; then
     git commit -m "update-template.sh bijgewerkt" && git push
     echo ""
     echo "✓ Script bijgewerkt. Voer het opnieuw uit:"
-    echo "    bash update-template.sh"
+    echo "    update-template"
     exit 0
 fi
 
@@ -54,7 +73,7 @@ for BESTAND in "${BESTANDEN[@]}"; do
 done
 
 # Verwijder het bestand dat git-LFS fouten veroorzaakt
-rm .git/hooks/pre-push 2> /dev/null
+rm -f .git/hooks/pre-push 2>/dev/null
 
 # Sla op in GitHub
 echo "▶ Opslaan in GitHub..."

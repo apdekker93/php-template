@@ -12,6 +12,7 @@ BESTANDEN=(
     ".devcontainer/devcontainer.json"
     ".devcontainer/postCreateCommand.sh"
     ".devcontainer/postStartCommand.sh"
+    ".vscode"
     "uitleg"
     "router.php"
     "start-server.sh"

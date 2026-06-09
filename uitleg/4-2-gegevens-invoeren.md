@@ -25,7 +25,7 @@ Tip: deze tabel kan je aanmaken in een test-database. Die noem je gewoon “oefe
 
 De volgende stap is om een formulier te maken waarin een
 gebruiker de gegevens kan invoeren. Deze staat al voor je klaar in
-form\_score.php.
+[form\_score.php](../oefenen/onderwerp-4/form_score.php).
 
 Eerder liet je opgestuurde gegevens invullen in het
 HTML-deel. Dat ga je nu niet doen. Nu moet het juist naar een andere server
@@ -45,7 +45,7 @@ maken van de database. Soms is dat om gegevens op te slaan, maar vaker nog om
 gegevens op te halen. Op al die pagina’s moet je verbinding maken met de
 database. Daarom is het handig om er een apart bestandje voor aan te maken, dat
 je dan makkelijk kan invoegen met het include-commando. Dat bestand wordt vaak
-dbconn.php genoemd (database connection). Daarin zet je de volgende code. De
+[dbconn.php](../oefenen/onderwerp-4/dbconn.php) genoemd (database connection). Daarin zet je de volgende code. De
 uitleg ervan staat eronder.
 
 ![](media/4-2-gegevens-invoeren/image_8.png)
@@ -107,7 +107,7 @@ Achter **VALUES** zet je de waarden die in de tabel ingevoegd moeten worden. In 
 
 Wil je weten hoe deze query eruit ziet? Voeg dan even de volgende regel toe:  
 print($query);  
-Test het bestand via [http://localhost:8080/form\_score.php](http://localhost:8080/form_score.php "http://localhost:8080/form_score.php") (zorg dat USBWebserver aan staat!)
+Test het bestand via [form\_score.php](../oefenen/onderwerp-4/form_score.php)
 
 Om de query uit te voeren, gebruik je de volgende code.
 
@@ -115,8 +115,8 @@ Om de query uit te voeren, gebruik je de volgende code.
 
 Hierin zie je dat er gelijk een variabele wordt ingesteld om
 een melding te geven of het gelukt is of niet. Daarvoor is de if nodig, die om het
-mysqli\_query-commando heen staat. Dat commando heeft twee gegevens nodig, namelijk
-de verbinding ($con) en de query ($query).
+`mysqli_query`-commando heen staat. Dat commando heeft twee gegevens nodig, namelijk
+de verbinding (`$con`) en de query (`$query`).
 
 **Verbinding verbreken**
 
@@ -125,10 +125,15 @@ op de database-server.
 
 ![](media/4-2-gegevens-invoeren/image_12.png)
 
-Zet stukjes
-code op de juiste plaats in form\_score\_opvragen.php en test of het werkt. Als
-je er niet uitkomt, kan je kijken bij uitwerking\_form\_score.php.
+Zet stukjes code op de juiste plaats in [form\_score.php](../oefenen/onderwerp-4/form_score.php) en test of het werkt. Als
+je er niet uitkomt, kan je kijken bij [uitwerking\_form\_score.php](../oefenen/onderwerp-4/uitwerking_form_score.php).
+
+
 
 ---
+
+Maak nu [opdracht 4.2: Registreren II](opdrachten/opdr-4-2.md).
+
+[← 4.1: Gegevens opslaan](4-1-gegevens-opslaan.md) | [5.1: Gegevens ophalen →](5-1-gegevens-ophalen.md)
 
 [← Terug naar inhoudsopgave](index.md)

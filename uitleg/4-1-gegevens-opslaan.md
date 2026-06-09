@@ -105,6 +105,12 @@ hebben. De kolom die je kiest om rijen mee te identificeren, heet de **primaire 
 ook uniek moeten zijn, kan je ook een **sleutel “uniek”** geven. Dat kan je bijvoorbeeld doen bij een e-mailadres, als
 je wilt dat je geen twee accounts mag aanmaken met hetzelfde e-mailadres.
 
+
+
 ---
+
+Maak nu [opdracht 4.1: Database aanmaken](opdrachten/opdr-4-1.md).
+
+[← 3.1: Formulieren](3-1-formulieren.md) | [4.2: Gegevens invoeren →](4-2-gegevens-invoeren.md)
 
 [← Terug naar inhoudsopgave](index.md)

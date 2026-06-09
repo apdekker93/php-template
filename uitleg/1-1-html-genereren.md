@@ -6,7 +6,7 @@
 
 PHP is een taal die gemaakt is om een website te **genereren**. Dat
 betekent dat je een programma kan schrijven dat een HTML-bestand voor je
-schrijft. **PHP** staat voor namelijk PHP Hypertext Preprocessor. De term **Hypertext**ken je al van de HyperText Markup Language: HTML. PHP is daar dus een
+schrijft. **PHP** staat voor namelijk PHP Hypertext Preprocessor. De term **Hypertext** ken je al van de HyperText Markup Language: HTML. PHP is daar dus een
 "**preprocessor**" voor: een voor-verwerker. Als je een pagina nog wilt aanpassen vlak
 voordat je hem naar je bezoeker op wilt sturen, biedt PHP
 daarvoor een oplossing. Met PHP kan je dan bijvoorbeeld invullen hoe de
@@ -23,6 +23,12 @@ plakken. Hoe doe je dat?
 
 Maak de volgende opdracht.
 
+
+
 ---
+
+Maak nu [opdracht 1.1: Overal hetzelfde menu](opdrachten/opdr-1-1.md).
+
+[2.1: Variabelen →](2-1-variabelen.md)
 
 [← Terug naar inhoudsopgave](index.md)

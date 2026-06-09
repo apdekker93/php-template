@@ -28,7 +28,7 @@ In je browser ziet dat er zo uit:
 
 Open het bestand “form1.html” en test het zelf maar eens. Verzend je naam en kijk wat er gebeurt met de URL in de adresbalk van je browser.
 
-In de code zie je dat de inputs allebei minimaal één **attribuut** hebben: **type**="…". Dat is verplicht bij een input, omdat het aangeeft wat je ermee kan: tekst invoeren, het formulier opsturen, een vinkje aanzetten, enzovoorts. Op W3Schools kan je alle opties vinden.
+In de code zie je dat de inputs allebei minimaal één **attribuut** hebben: `type="…"`. Dat is verplicht bij een input, omdat het aangeeft wat je ermee kan: tekst invoeren, het formulier opsturen, een vinkje aanzetten, enzovoorts. Op W3Schools kan je alle opties vinden.
 
 Het **name-attribuut** is niet verplicht, maar die heb je wel altijd nodig behalve bij de submit-knop. Je hebt vast al gezien dat de “name” die hier is ingevoerd in de URL terug kwam toen je het formulier verstuurde: form1.html?naam=Paulus. Daar moeten we nog iets mee doen…
 
@@ -62,15 +62,15 @@ Als laatste willen we het resultaat ergens in de HTML-code laten zien. Laten we 
 
 ![](media/3-1-formulieren/image_4.png)
 
-Probeer maar eens uit hoe het werkt met bestand “form1.php”. Let op dat je het wel in de root-map van USBWebserver moet zetten, anders wordt de PHP-code niet uitgevoerd. Probeer het .PHP-bestand maar eens in je browser te openen zonder USBWebserver, dan zie je wat ik bedoel.
+Probeer maar eens uit hoe het werkt met bestand “[form1.php](../oefenen/onderwerp-3/form1.php)”. Let op dat je het wel in je hoofdmap zet en de server draait (`start-server`). Probeer het .PHP-bestand maar eens in je browser te openen zonder USBWebserver, dan zie je wat ik bedoel.
 
-Als je het in de root-map hebt gezet, start je USBWebserver op en ga je naar localhost:8080/form1.php. Daar zie je nu een foutmelding:
+Als je het in de root-map hebt gezet, typ `start-server` in de terminal en open [form1.php](../oefenen/onderwerp-3/form1.php) in de browser. Daar zie je nu een foutmelding:
 
 ![](media/3-1-formulieren/image_5.png)
 
 Waar komt dat door? Omdat er nog niets opgestuurd is, dus
-$\_GET["naam"] heeft geen waarde! Zoals je in de foutmelding ziet,
-wordt “naam” de **index** genoemd. Dat betekent: "de plek waar je iets kan vinden". In dit geval zoekt PHP namelijk naar een waarde die is opgestuurd met een formulier en die dus te vinden is in de URL, bijvoorbeeld form1.php?naam=Paulus. In dit voorbeeld kan je zeggen: de waarde "Paulus" is opgestuurd met index "naam". Als je nog niets hebt opgestuurd, is de waarde op index "naam" nog onbekend, oftewel **undefined** (niet
+`$\_GET["naam"]` heeft geen waarde! Zoals je in de foutmelding ziet,
+wordt “naam” de **index** genoemd. Dat betekent: "de plek waar je iets kan vinden". In dit geval zoekt PHP namelijk naar een waarde die is opgestuurd met een formulier en die dus te vinden is in de URL, bijvoorbeeld [form1.php](../oefenen/onderwerp-3/form1.php)?naam=Paulus. In dit voorbeeld kan je zeggen: de waarde "Paulus" is opgestuurd met index "naam". Als je nog niets hebt opgestuurd, is de waarde op index "naam" nog onbekend, oftewel **undefined** (niet
 gedefinieerd). In de foutmelding staat dat het mis gaat op regel 3 in de code. Daar moet je dus nog iets aanpassen. Hieronder vindt je uitleg over de oplossing van dit probleem. Nu is het vooral belangrijk dat je ziet hoeveel informatie er in een foutmelding staat. Een **foutmelding** geeft je alle informatie die je helpt om te ontdekken
 wat er mis gaat. De oplossing staat er natuurlijk niet bij, die moet je zelf bedenken of opzoeken.
 
@@ -90,8 +90,17 @@ De vorm om een **voorwaarde te stellen** is altijd hetzelfde:
 
 Let goed op alle haakjes! Tussen de ronde haken staat de voorwaarde, en tussen de krulhaken staan de opdrachten die uitgevoerd moeten worden.
 
-Test het maar eens met form1v2.php.
+Test het maar eens met [form1v2.php](../oefenen/onderwerp-3/form1v2.php).
+
+
 
 ---
+
+Maak nu de volgende opdrachten:
+
+- [Opdracht 3.1.1: Kleur kiezen](opdrachten/opdr-3-1-1.md)
+- [Opdracht 3.1.2: Registreren I](opdrachten/opdr-3-1-2.md)
+
+[← 2.1: Variabelen](2-1-variabelen.md) | [4.1: Gegevens opslaan →](4-1-gegevens-opslaan.md)
 
 [← Terug naar inhoudsopgave](index.md)

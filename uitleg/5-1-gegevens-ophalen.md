@@ -57,14 +57,14 @@ maar één rij zijn, omdat username de primaire sleutel is.
 Ook nu wordt dit weer als tekst in een PHP-variabele gezet:  
 ![](media/5-1-gegevens-ophalen/image_10.png)
 
-Neem deze code over in het bestand form\_score\_opvragen.php.
+Neem deze code over in het bestand [form\_score\_opvragen.php](../oefenen/onderwerp-5/form_score_opvragen.php).
 
 De tweede stap is om de query op te sturen. Dat gaat nu net
 iets anders, omdat je het resultaat van de query ook nodig hebt. Bij de
 INSERT-query was dat niet nodig. Daar hoefde je alleen te weten of het gelukt
 was. Nu heb je de gegevens nodig om die met PHP in te vullen in het HTML-deel
 van je website. Daarom zet je het resultaat in een PHP-variabele. Een logische
-naam daarvoor is $result.  
+naam daarvoor is `$result`.  
 ![](media/5-1-gegevens-ophalen/image_11.png)
 
 De derde stap is om het resultaat te verwerken. Hieronder
@@ -72,13 +72,13 @@ zie je een schema met de stappen die hiervoor in de code worden gedaan. Onder
 het schema staat de uitleg van wat er gebeurt.  
 ![](media/5-1-gegevens-ophalen/image_15.png)
 
-Zie je de toevoeging van “$result =” tussen de haakjes achter
+Zie je de toevoeging van `$result =` tussen de haakjes achter
 if? Dat zorgt ervoor dat het resultaat opgeslagen wordt in de variabele
-$result. Die variabele bevat nu dus de resultaattabel. Daaruit ga je een rij
-halen (dat is als het goed is de enige rij). Daarvoor gebruik je de functie “mysqli\_fetch\_assoc”.
+`$result`. Die variabele bevat nu dus de resultaattabel. Daaruit ga je een rij
+halen (dat is als het goed is de enige rij). Daarvoor gebruik je de functie `mysqli_fetch_assoc`.
 Die functie heeft alleen de resultaattabel nodig om zijn werk te kunnen doen.
-Die staat dus tussen de ronde haken ($result). Uit de rij wordt dan de score
-gehaald en opgeslagen in de variabele $opgehaalde\_score. Dat kan dus door
+Die staat dus tussen de ronde haken (`$result`). Uit de rij wordt dan de score
+gehaald en opgeslagen in de variabele `$opgehaalde_score`. Dat kan dus door
 achter $rij de naam van de kolom tussen vierkante haken te zetten, én tussen
 aanhalingstekens. De kolomnaam moet je dus als een stukje tekst tussen vierkante
 haken zetten. Dat is namelijk wat aanhalingstekens “ ' ” betekenen.
@@ -94,9 +94,15 @@ database-server weer sluiten natuurlijk. Dat gaat precies hetzelfde als bij het
 invoeren van gegevens met de INSERT-INTO-query.
 
 Zet stukjes code op de juiste plaats in
-form\_score\_opvragen.php en test of het werkt. Als je er niet uitkomt, kan je kijken
-bij uitwerking\_form\_score\_opvragen.php.
+[form\_score\_opvragen.php](../oefenen/onderwerp-5/form_score_opvragen.php) en test of het werkt. Als je er niet uitkomt, kan je kijken
+bij [uitwerking\_form\_score\_opvragen.php](../oefenen/onderwerp-5/uitwerking_form_score_opvragen.php).
+
+
 
 ---
+
+Maak nu [opdracht 5.1: Inloggen I](opdrachten/opdr-5-1.md).
+
+[← 4.2: Gegevens invoeren](4-2-gegevens-invoeren.md) | [5.2: Gegevens verbergen →](5-2-gegevens-verbergen.md)
 
 [← Terug naar inhoudsopgave](index.md)

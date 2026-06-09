@@ -10,7 +10,7 @@ gebruiken, maar daardoor zal je code al snel een rommeltje worden. Om dat te
 voorkomen, delen we een PHP-bestand op in twee delen: een PHP-deel en een
 HTML-deel. Het PHP-deel staat tussen <?php en ?> en het HTML-deel staat tussen
 de al bekende html-tags. Daartussen staat het documenttype vermeld. Kijk maar
-eens in het (verder lege) startbestand.php.
+eens in het (verder lege) [startbestand.php](../oefenen/startbestand.php).
 
 Alles wat in het PHP-gedeelte staat, wordt uitgevoerd door
 de server. Alles wat daarbuiten staat wordt precies zo naar de gebruiker
@@ -62,7 +62,7 @@ In het HTML-deel kan je dat weer invullen:
 
 ![](media/2-1-variabelen/image_12.png)
 
-De complete code staat in score.php. Kijk daar maar eens en
+De complete code staat in [score.php](../oefenen/onderwerp-2/score.php). Kijk daar maar eens en
 probeer wat aan te passen (bijvoorbeeld een toewijzing om de score één te
 verhogen).
 
@@ -73,10 +73,16 @@ Even op een rijtje:
 - Een declaratie ziet er hetzelfde uit als een
   toewijzing.
 - De meeste code staat in het PHP-deel, dus tussen
-  <?php en ?>.
+  `<?php` en `?>`.
 - De waarde van een variabele in het HTML-deel
-  invullen doe je door de variabele tussen <?= en ?> te zetten.
+  invullen doe je door de variabele tussen `<?=` en `?>` te zetten.
+
+
 
 ---
+
+Maak nu [opdracht 2.1: Score aanpassen](opdrachten/opdr-2-1.md).
+
+[← 1.1: HTML genereren](1-1-html-genereren.md) | [3.1: Formulieren →](3-1-formulieren.md)
 
 [← Terug naar inhoudsopgave](index.md)
